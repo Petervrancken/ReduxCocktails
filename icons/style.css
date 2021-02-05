@@ -15,6 +15,18 @@ Single-colored icons can be modified like so:
 }
 ========================================== */
 
-.icon-images {
-  width: 1.125em;
+.icon-left {
+  width: 0.548828125em;
+}
+
+.icon-logo {
+  width: 1.1435546875em;
+}
+
+.icon-stack {
+  width: 1.09375em;
+}
+
+.icon-suitcase {
+  width: 1.427734375em;
 }
