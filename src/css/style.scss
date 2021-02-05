@@ -2,3 +2,20 @@
 @use "./base/reset";
 @use "./base/fonts";
 @use "./base/mixins" as *;
+
+@import "../../icons/style";
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  background-image: url("../../images/pretty.jpg");
+  background-color: #cccccc;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
