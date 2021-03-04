@@ -1,13 +1,6 @@
 import "../../icons/svgxuse";
-
-import Card from "./Card.js";
-
-//new Card(document.getElementById("grid"), "icon-home")
-//new Card(document.getElementById("grid"), "icon-home")
+import Cocktails from './components/Cocktails';
 
 
-
-
-//window.addEventListener("flipped", function(e){
-    //console.log(e.detail._icon)
-//})
+const appRef = document.getElementById("app");
+Cocktails(appRef);
