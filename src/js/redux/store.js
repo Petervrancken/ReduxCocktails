@@ -5,5 +5,6 @@ import reducer from '../redux/Cocktails';
 
 
 const store = createStore(reducer,applyMiddleware(logger,thunk));
+// reducer komt hier door en wordt geimporteerd op lijn 4
 
 export default store;
