@@ -20,10 +20,14 @@ export const setCocktail = (str) => (dispatch, getState) => {
     .then(responseObj => {
         dispatch({
             type: "SET_COCKTAIL_SUCCES", 
-            payload: responseObj.data      // hier verderwerken
+            payload: responseObj.data.drinks      // hier verderwerken
         })
     })
-    .catch()
+    .catch(error=>{
+        dispatch({
+            type: "SET_COCKTAIL_ERROR"
+        })
+    })
     //               refactoring in functie van de onderstaande code. thunk doet hier zijn werk
 };
 
@@ -36,8 +40,9 @@ export const setCocktail = (str) => (dispatch, getState) => {
 
 const reducer = (state = initialState, {type, payload}) => {
     switch(type){        // switch vergelijkt type met de case
-        case "SET_COCKTAIL": return { ...state,cocktail: payload, error: false } // geeft uitgespreide state terug, maar overschrijft cocktail
-        case "SET_COCKTAIL_SUCCES": return {...state,cocktails: payload, error:false} //COCKTAILSsss !!! stuur cocktails door naar de lege array in initialState
+        case "SET_COCKTAIL": return { ...state,cocktail: payload, error: false }; // geeft uitgespreide state terug, maar overschrijft cocktail
+        case "SET_COCKTAIL_SUCCES": return {...state,cocktails: payload, error:false}; //COCKTAILSsss !!! stuur cocktails door naar de lege array in initialState
+        case "SET_COCKTAIL_ERROR": return {...state, error:true};
         default: return state;
     }
 }
